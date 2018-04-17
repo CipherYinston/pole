@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Поле чудес</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        var number;
+        var money = 500;
+
+        alert("Баланс вашего счета " + money + " руб");
+
+        // Создание функции num
+        function num () {
+            number = +prompt("Введите 6006");
+            
+            // Проверка верно ли введен номер
+            if ( number == 6006 ) {
+                alert("Вы пытаетесь дозвонится до студии \" Поле чудес \" ");
+                // Создание и проверка переменной, отвечающую за за нята ли сеть
+                var random = Math.random() * 5;
+
+                if ( random >= 1 ) {
+                    alert("Сеть занята... Ожидайте");
+                    var waiting = Math.random() * 4;
+
+                    if ( waiting <= 10 ) {
+                        var sms = prompt("Введите смс с кодом \" поле \" ");
+                        
+                        // Проверка правельного ввода смс
+                        if ( sms == "поле" || sms == "Поле" || sms == sms.toUpperCase() ) {
+                            alert("Вы успешно дозвонились. \n Ожидайте, когда подойдет ваша очередь с вами свяжется оператор");
+                            money -= 10;
+                            alert("Оператор подошел... Приготовтесь к первому вопросу");
+
+                            var question = "Html тег, отвечающий за подключение скриптов";
+                            var point;
+                            var score;
+                            var answer = "script";
+                            alert(question + ". Слово состоит из " + answer.length + " латинских букв");
+                            money -= 10;
+                            
+                            drum();
+
+                        } else {
+                            alert("Некорректный код. Перезвоните позже");
+                            exit();
+                        }
+                    } else {
+                        alert("Время ожидания истекло. Перезвоните позже");
+                        exit();
+                    }
+                } else {
+                    alert("Недостаточно средств на телефоне или проблемы со связью. Перезвоните позже");
+                    exit();
+                }
+
+            } else {   
+                alert("Неправельно введен номер");
+                exit();
+            }
+        }
+        
+        // Создание функции exit
+        function exit () {
+            var exit = prompt("Хотите попробовать дозвонится еще раз? Введите \" да \" Если нет, то введите \" выход \" ");
+
+            if ( exit == "выход" || exit == exit.toUpperCase() || exit == "exit" || exit == "EXIT"  ) {
+                alert("Вы отменили все попытки дозвонится");
+            } else if ( exit == "да" || exit == "Да" || exit == "ДА" || exit == "yes" || exit || "Yes" || exit == "YES" ) {
+                num();
+            } else {
+                alert("Вы ввели некорректные символы. Перезвоните позже");
+            }
+        }
+
+        // Cоздание функции прокручивание барабана
+        function drum () {
+            var drum = prompt("Крутите барабан, т. е. введите число от -10 до 10");
+            if ( +drum <= 5 ) {
+                // На барабане от 5 до 50 очков
+                var drumPoint = [];
+                drumPoint[0] = 5;
+                drumPoint[37] = 50;
+                alert(drumPoint);
+            } else if ( +drum != 5 && drum > 5 ) {
+                // на барабане "+"
+            } else {
+                // Банкрот
+                alert("На барабане \" Банкрот \" ");
+            }
+        }
+
+
+        // Игра Поле чудес
+        do {
+            num();
+        }while ( exit() );
+        alert("Баланс вашего счета " + meney + " руб");
+
+    </script>
+</body>
+</html>
